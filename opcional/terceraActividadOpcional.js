@@ -19,4 +19,3 @@ while (aux <= count3) {
     console.log(aux);
     aux++;
 }
-// 4

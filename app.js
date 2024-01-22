@@ -22,5 +22,9 @@ while (userNumber != secretNumber) {
         // Se incrementa el contador de intentos y reasigna variable
         attemps++
         wordCounter = 'intentos';
+        if (attemps > 3) {
+            alert('Llegaste al número máximo de intentos');
+            break;
+        }
     }
 }
