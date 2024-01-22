@@ -1,5 +1,5 @@
 // variables
-let secretNumber = 6;
+let secretNumber = 8;
 let userNumber = prompt('Indica un número entre 1 y 10, por favor: ');
 // comparacion
 if (userNumber == secretNumber) {
