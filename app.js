@@ -1,4 +1,6 @@
 let secretNumber = 6;
 let userNum = prompt('Indica un número, por favor: ');
 
-console.log(userNum);
+if (userNum == secretNumber) {
+    alert('¡Acertaste el número!')
+}
