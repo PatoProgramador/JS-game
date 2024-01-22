@@ -2,6 +2,7 @@
 let secretNumber = 8;
 let userNumber = 0;
 let attemps = 1;
+let wordCounter = 'intento';
 
 while (userNumber != secretNumber) {
     userNumber = prompt('Indica un número entre 1 y 10, por favor: ');
@@ -9,7 +10,7 @@ while (userNumber != secretNumber) {
     // cuando acierta
     if (userNumber == secretNumber) {
         // si el numero es igual
-        alert(`¡Acertaste el número! el número es: ${userNumber}, lo hiciste en ${attemps == 1 ? `${attemps} intento` : `${attemps} intentos` }`);
+        alert(`¡Acertaste el número! el número es: ${userNumber}, lo hiciste en ${attemps} ${wordCounter}`);
     // cuando no acierta
     } else {
         // condicionales anidados
@@ -18,7 +19,8 @@ while (userNumber != secretNumber) {
         } else {
             alert('El número secreto es mayor');
         }
-        // Se incrementa el contador de intentos
+        // Se incrementa el contador de intentos y reasigna variable
         attemps++
+        wordCounter = 'intentos';
     }
 }
