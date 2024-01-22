@@ -6,6 +6,11 @@ if (userNumber == secretNumber) {
     // si el numero es igual
     alert(`¡Acertaste el número! el número es: ${userNumber}`);
 } else {
+    if (userNumber > secretNumber) {
+        alert('El número secreto es menor');
+    } else {
+        alert('El número secreto es mayor');
+    }
     // si no acierta el numero
-    alert('Lo siento, no acertaste el número');
+    // alert('Lo siento, no acertaste el número');
 }
