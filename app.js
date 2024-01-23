@@ -1,11 +1,12 @@
 // variables
-let secretNumber = Math.floor(Math.random() * 10) + 1;
+let maxNumber = 100
+let secretNumber = Math.floor(Math.random() * maxNumber) + 1;
 let userNumber = 0;
 let attempts = 1;
-let maxAttempts = 3;
+let maxAttempts = 6;
 
 while (userNumber != secretNumber) {
-    userNumber = parseInt(prompt('Indica un número entre 1 y 10, por favor: '));
+    userNumber = parseInt(prompt(`Indica un número entre 1 y ${maxNumber}, por favor: `));
 
     // cuando acierta
     if (userNumber == secretNumber) {
