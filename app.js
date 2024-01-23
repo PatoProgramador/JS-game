@@ -1,6 +1,6 @@
 // variables
-let secretNum = generateRandomNum();
-let attempts = 1;
+let secretNum = 0;
+let attempts = 0;
 // funciones
 // asignar texto a elementos html
 function assignTextElement(elemento, texto) {
@@ -15,6 +15,25 @@ function generateRandomNum() {
 // limpiar la caja
 function newBox() {
     document.querySelector('#userValue').value = '';
+}
+// funcion para reiniciar el juego
+function initialConditions() {
+    // mensajes iniciales
+    assignTextElement('h1', 'Juego del número secreto');
+    assignTextElement('p', 'Indica un número entre 1 al 100');
+    // nuevo numero aleatorio
+    secretNum = generateRandomNum();
+    // reinicio del numero de intentos
+    attempts = 1;
+}
+// para reiniciar el juego
+function restartGame(){
+    // limpiar el input
+    newBox();
+    // condiciones iniciales
+    initialConditions();
+    // inhabilitar de nuevo el boton de reinicio
+    document.querySelector('#reiniciar').setAttribute('disabled','true');
 }
 // funcion que compara el numero del input con el random
 function verifyAttempt() {
@@ -36,6 +55,5 @@ function verifyAttempt() {
     }
     return;
 }
-// ejecuciones necesarias
-assignTextElement('h1', 'Juego del número secreto');
-assignTextElement('p', 'Indica un número entre 1 al 100');
+
+initialConditions();
