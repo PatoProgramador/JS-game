@@ -5,7 +5,7 @@ let attempts = 1;
 let maxAttempts = 3;
 
 while (userNumber != secretNumber) {
-    userNumber = prompt('Indica un número entre 1 y 10, por favor: ');
+    userNumber = parseInt(prompt('Indica un número entre 1 y 10, por favor: '));
 
     // cuando acierta
     if (userNumber == secretNumber) {
