@@ -23,6 +23,7 @@ function verifyAttempt() {
     // en caso de acertar
     if (userNum === secretNum) {
         assignTextElement('p', `Acertaste el número en ${attempts} ${attempts === 1 ? 'intento' : 'intentos'}`);
+        document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         // caso donde no se acierta
         if (userNum > secretNum) {
