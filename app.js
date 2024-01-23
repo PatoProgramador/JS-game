@@ -1,5 +1,5 @@
 // variables
-let secretNumber = 8;
+let secretNumber = Math.floor(Math.random() * 10) + 1;
 let userNumber = 0;
 let attempts = 1;
 let maxAttempts = 3;
@@ -10,7 +10,7 @@ while (userNumber != secretNumber) {
     // cuando acierta
     if (userNumber == secretNumber) {
         // si el numero es igual
-        alert(`¡Acertaste el número! el número es: ${userNumber}, lo hiciste en ${attempts} ${attempts == 1 ? 'vez' : 'veces'}`);
+        alert(`¡Acertaste el número! el número es: ${userNumber}, lo hiciste en ${attempts} ${attempts == 1 ? 'intento' : 'intentos'}`);
     // cuando no acierta
     } else {
         // condicionales anidados
