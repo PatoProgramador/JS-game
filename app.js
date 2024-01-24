@@ -1,6 +1,7 @@
 // variables
 let secretNum = 0;
 let attempts = 0;
+let randomNumbersList = [];
 // funciones
 // asignar texto a elementos html
 function assignTextElement(elemento, texto) {
@@ -10,7 +11,15 @@ function assignTextElement(elemento, texto) {
 }
 // generador de numero aleatorio
 function generateRandomNum() {
-    return Math.floor(Math.random() * 10) + 1;
+    let number = Math.floor(Math.random() * 10) + 1;
+    // si el numero generado ya esta en la lista generar uno nuevo
+    if (randomNumbersList.includes(number)) {
+        return generateRandomNum();
+    } else {
+        // se añade a la lista para que no se repita
+        randomNumbersList.push(number);
+        return number;
+    }
 }
 // limpiar la caja
 function newBox() {
