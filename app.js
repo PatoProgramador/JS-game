@@ -2,6 +2,7 @@
 let secretNum = 0;
 let attempts = 0;
 let randomNumbersList = [];
+let maxNum = 10;
 // funciones
 // asignar texto a elementos html
 function assignTextElement(elemento, texto) {
@@ -11,14 +12,19 @@ function assignTextElement(elemento, texto) {
 }
 // generador de numero aleatorio
 function generateRandomNum() {
-    let number = Math.floor(Math.random() * 10) + 1;
-    // si el numero generado ya esta en la lista generar uno nuevo
-    if (randomNumbersList.includes(number)) {
-        return generateRandomNum();
+    let number = Math.floor(Math.random() * maxNum) + 1;
+    // final del juego
+    if (randomNumbersList.length === maxNum) {
+        assignTextElement('p', '¡Ya haz adivinado todos los números posibles!')
     } else {
-        // se añade a la lista para que no se repita
-        randomNumbersList.push(number);
-        return number;
+        // si el numero generado ya esta en la lista generar uno nuevo
+        if (randomNumbersList.includes(number)) {
+            return generateRandomNum();
+        } else {
+            // se añade a la lista para que no se repita
+            randomNumbersList.push(number);
+            return number;
+        }
     }
 }
 // limpiar la caja
@@ -29,7 +35,7 @@ function newBox() {
 function initialConditions() {
     // mensajes iniciales
     assignTextElement('h1', 'Juego del número secreto');
-    assignTextElement('p', 'Indica un número entre 1 al 100');
+    assignTextElement('p', `Indica un número entre 1 al ${maxNum}`);
     // nuevo numero aleatorio
     secretNum = generateRandomNum();
     // reinicio del numero de intentos
